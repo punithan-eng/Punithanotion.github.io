@@ -7,12 +7,12 @@
 
 <style>
 :root {
-  --bg: #f5f5f4;
-  --card: #ffffff;
-  --text: #1c1c1e;
-  --secondary: #6e6e73;
-  --border: #e5e5ea;
-  --accent: #facc15; /* Apple Notes yellow */
+  --bg: #000000;
+  --card: #1c1c1e;
+  --text: #ffffff;
+  --secondary: #a1a1a6;
+  --border: #2c2c2e;
+  --accent: #ffd60a; /* Apple Notes Yellow */
   --radius: 14px;
 }
 
@@ -22,7 +22,6 @@
   padding: 0;
 }
 
-/* Apple system font stack */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -34,7 +33,6 @@ body {
 header {
   padding: 20px 6%;
   border-bottom: 1px solid var(--border);
-  background: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,6 +50,10 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover {
+  color: var(--accent);
+}
+
 /* HERO */
 .hero {
   padding: 56px 6% 40px;
@@ -66,7 +68,7 @@ nav a {
 .hero p {
   font-size: 17px;
   color: var(--secondary);
-  max-width: 600px;
+  max-width: 640px;
 }
 
 /* SECTION */
@@ -93,11 +95,12 @@ nav a {
   border-radius: var(--radius);
   padding: 18px;
   border: 1px solid var(--border);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border 0.2s ease;
 }
 
 .card:hover {
-  background: #fafafa;
+  background: #2c2c2e;
+  border-color: var(--accent);
 }
 
 .card h4 {
@@ -115,7 +118,7 @@ nav a {
 .card span {
   font-size: 14px;
   font-weight: 500;
-  color: #2563eb;
+  color: var(--accent);
 }
 
 /* FEATURES */
@@ -127,7 +130,6 @@ nav a {
 
 .features div {
   font-size: 15px;
-  color: var(--text);
 }
 
 /* FOOTER */
@@ -158,50 +160,50 @@ footer {
 </header>
 
 <section class="hero">
-  <h2>Simple Notion Templates for Students & Research</h2>
+  <h2>Distraction-Free Notion Templates</h2>
   <p>
-    Clean, distraction-free Notion systems inspired by Apple Notes.
-    Designed for clarity, focus, and real work.
+    Apple Notes–inspired dark UI with clean structure for students and researchers.
+    Built for focus, clarity, and deep work.
   </p>
 </section>
 
 <section class="section" id="templates">
-  <h3>Templates</h3>
+  <h3>Notes</h3>
 
   <div class="grid">
     <div class="card">
-      <h4>🎓 Student OS</h4>
-      <p>Classes, notes, exams, habits, and goals — organized simply.</p>
+      <h4>Student OS</h4>
+      <p>Classes, notes, exams, habits, and goals.</p>
       <span>Open →</span>
     </div>
 
     <div class="card">
-      <h4>🔬 Research OS</h4>
-      <p>Literature review, papers, experiments, and timelines.</p>
+      <h4>Research OS</h4>
+      <p>Literature review, experiments, papers.</p>
       <span>Open →</span>
     </div>
 
     <div class="card">
-      <h4>⚡ Hybrid OS</h4>
-      <p>For students who balance academics and research.</p>
+      <h4>Hybrid OS</h4>
+      <p>Academic life + research workflows.</p>
       <span>Open →</span>
     </div>
   </div>
 </section>
 
 <section class="section" id="features">
-  <h3>Why this style?</h3>
+  <h3>Why this design?</h3>
 
   <div class="features">
-    <div>🟡 Inspired by Apple Notes UI</div>
-    <div>🧠 Focus-first design</div>
-    <div>📱 Perfect on mobile & iPad</div>
-    <div>🧩 Easy to customize in Notion</div>
+    <div>🟡 Apple Notes dark-mode inspired</div>
+    <div>🧠 Focus-first layout</div>
+    <div>📱 iPhone & iPad friendly</div>
+    <div>🧩 Seamless with Notion</div>
   </div>
 </section>
 
 <footer>
-  © 2026 Punithan • Designed for clarity
+  © 2026 Punithan • Notes-style clarity
 </footer>
 
 </body>
