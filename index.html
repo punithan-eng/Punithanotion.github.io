@@ -1,246 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Punithan – Notion Templates</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Punithan · Notion OS</title>
 
-<style>
-:root {
-  --bg: #000000;
-  --card: #1c1c1e;
-  --text: #ffffff;
-  --secondary: #a1a1a6;
-  --border: #2c2c2e;
-  --accent: #ffd60a;
-  --radius: 14px;
-}
+  <!-- Inter (Gumroad-style font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    :root {
+      --bg: #000;
+      --surface: #0d0d0d;
+      --border: #1e1e1e;
+      --text: #fff;
+      --muted: #9a9a9a;
+    }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", system-ui, sans-serif;
+    }
 
-/* NOTION PAGE */
-.notion-page {
-  max-width: 980px;
-  margin: 0 auto;
-  padding-bottom: 80px;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
 
-/* HEADER */
-header {
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* ---------- HEADER ---------- */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #000;
+    }
 
-header h1 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--accent);
-}
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-nav a {
-  margin-left: 20px;
-  font-size: 15px;
-  color: var(--secondary);
-  text-decoration: none;
-}
+    .brand {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
 
-nav a:hover {
-  color: var(--accent);
-}
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-/* HERO */
-.hero {
-  padding: 40px 0 32px;
-}
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+    }
 
-.hero h2 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  color: var(--accent);
-}
+    .nav-link:hover {
+      color: var(--text);
+    }
 
-.hero p {
-  font-size: 18px;
-  color: var(--secondary);
-  max-width: 720px;
-}
+    .nav-btn {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
 
-/* NOTION LINK */
-.notion-link {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
+    .nav-btn.primary {
+      border-color: #fff;
+    }
 
-.notion-link:hover {
-  text-decoration: underline;
-}
+    .nav-btn:hover {
+      background: #fff;
+      color: #000;
+    }
 
-/* SECTION */
-.section {
-  padding: 24px 0 48px;
-}
+    /* ---------- HERO ---------- */
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 72px 24px 56px;
+    }
 
-.section h3 {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--secondary);
-  margin-bottom: 20px;
-}
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
+    .hero p {
+      max-width: 560px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
 
-/* LIQUID GLASS CARD */
-.card {
-  position: relative;
-  background: rgba(28, 28, 30, 0.55);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  border-radius: var(--radius);
-  padding: 18px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
-}
+    /* ---------- GRID ---------- */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 24px 80px;
+    }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.18),
-    rgba(255,255,255,0.02)
-  );
-  opacity: 0.4;
-  pointer-events: none;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,214,10,0.6);
-  box-shadow:
-    0 14px 40px rgba(0,0,0,0.65),
-    0 0 0 1px rgba(255,214,10,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-}
+    /* ---------- CARD ---------- */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
 
-.card h4 {
-  font-size: 17px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--accent);
-}
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #fff;
+    }
 
-.card p {
-  font-size: 14px;
-  color: var(--secondary);
-  margin-bottom: 12px;
-}
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
 
-/* FOOTER */
-footer {
-  padding-top: 32px;
-  font-size: 13px;
-  color: var(--secondary);
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero h2 {
-    font-size: 30px;
-  }
-}
-</style>
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="notion-page">
+  <!-- NAV -->
+  <header>
+    <div class="nav">
+      <div class="brand">Punithan Notion OS</div>
 
-<header>
-  <h1>Notion</h1>
-  <nav>
-    <a href="#templates">Templates</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h2>Punithan’s Notion OS Templates</h2>
-  <p>
-    A complete Notion operating system for academic life.
-    Brings notes, research, tasks, and goals into a single, calm workspace
-    designed for focus, structure, and long-term consistency.
-    <a href="YOUR_NOTION_LINK_HERE" target="_blank" class="notion-link">
-      View My Gallery →
-    </a>
-  </p>
-</section>
-
-<section class="section" id="templates">
-  <h3>Templates</h3>
-
-  <div class="grid">
-    <div class="card">
-      <h4>Student OS</h4>
-      <p>Classes, notes, exams, habits, and goals.</p>
-      <a href="YOUR_NOTION_LINK_HERE" target="_blank" class="notion-link">
-        Open →
-      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="#">Templates</a>
+        <a class="nav-link" href="#">Widgets</a>
+        <a class="nav-btn" href="#" target="_blank">Notion Dashboard</a>
+        <a class="nav-btn primary" href="#" target="_blank">Gumroad</a>
+      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <h4>Research OS</h4>
-      <p>Literature review, experiments, and papers.</p>
-      <a href="YOUR_NOTION_LINK_HERE" target="_blank" class="notion-link">
-        Open →
-      </a>
-    </div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Systems for Focused Work</h1>
+    <p>
+      A growing collection of Notion templates and widgets designed
+      for clarity, structure, and real workflows.
+    </p>
+  </section>
 
-    <div class="card">
-      <h4>Hybrid OS</h4>
-      <p>Academic life combined with research workflows.</p>
-      <a href="YOUR_NOTION_LINK_HERE" target="_blank" class="notion-link">
-        Open →
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- CARDS -->
+  <main>
+    <section class="grid">
 
-<footer>
-  © 2026 Punithan • Notion-style clarity
-</footer>
+      <div class="card">
+        <div class="tag">Template</div>
+        <h3>University Student OS</h3>
+        <p>Plan semesters, track tasks, and manage academic life in one system.</p>
+        <div class="actions">
+          <a class="btn" href="#">Preview</a>
+          <a class="btn" href="#">Get</a>
+        </div>
+      </div>
 
-</div>
+      <div class="card">
+        <div class="tag">Widget</div>
+        <h3>Seven-Segment Clock</h3>
+        <p>Minimal black & white digital clock widget for Notion dashboards.</p>
+        <div class="actions">
+          <a class="btn" href="#">Live</a>
+          <a class="btn" href="#">Embed</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Template</div>
+        <h3>Research Student OS</h3>
+        <p>Literature tracking, experiments, tasks, and notes in one workspace.</p>
+        <div class="actions">
+          <a class="btn" href="#">Preview</a>
+          <a class="btn" href="#">Get</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Punithan · Designed for Notion users
+  </footer>
 
 </body>
 </html>
