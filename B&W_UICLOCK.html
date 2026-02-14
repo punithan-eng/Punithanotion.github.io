@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Segment Clock</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .clock {
+    display: flex;
+    gap: 14px;
+    background: #000;
+    padding: 18px 22px;
+    border-radius: 14px;
+  }
+
+  .digit {
+    position: relative;
+    width: 44px;
+    height: 78px;
+  }
+
+  .segment {
+    position: absolute;
+    background: #fff;
+    opacity: 0.12;
+    border-radius: 4px;
+  }
+
+  .on {
+    opacity: 1;
+  }
+
+  /* segment positions */
+  .a { top: 0; left: 8px; width: 28px; height: 6px; }
+  .b { top: 6px; right: 0; width: 6px; height: 28px; }
+  .c { bottom: 6px; right: 0; width: 6px; height: 28px; }
+  .d { bottom: 0; left: 8px; width: 28px; height: 6px; }
+  .e { bottom: 6px; left: 0; width: 6px; height: 28px; }
+  .f { top: 6px; left: 0; width: 6px; height: 28px; }
+  .g { top: 36px; left: 8px; width: 28px; height: 6px; }
+
+  .colon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 4px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="clock" id="clock"></div>
+
+<script>
+  const segmentsMap = {
+    0: ['a','b','c','d','e','f'],
+    1: ['b','c'],
+    2: ['a','b','g','e','d'],
+    3: ['a','b','g','c','d'],
+    4: ['f','g','b','c'],
+    5: ['a','f','g','c','d'],
+    6: ['a','f','e','d','c','g'],
+    7: ['a','b','c'],
+    8: ['a','b','c','d','e','f','g'],
+    9: ['a','b','c','d','f','g']
+  };
+
+  function createDigit(num) {
+    const digit = document.createElement('div');
+    digit.className = 'digit';
+
+    ['a','b','c','d','e','f','g'].forEach(seg => {
+      const s = document.createElement('div');
+      s.className = `segment ${seg}`;
+      if (segmentsMap[num].includes(seg)) s.classList.add('on');
+      digit.appendChild(s);
+    });
+
+    return digit;
+  }
+
+  function createColon() {
+    const colon = document.createElement('div');
+    colon.className = 'colon';
+    colon.innerHTML = `<div class="dot"></div><div class="dot"></div>`;
+    return colon;
+  }
+
+  function updateClock() {
+    const now = new Date();
+    const time = now.toTimeString().slice(0,5).replace(':','');
+
+    const clock = document.getElementById('clock');
+    clock.innerHTML = '';
+
+    time.split('').forEach((n, i) => {
+      clock.appendChild(createDigit(n));
+      if (i === 1) clock.appendChild(createColon());
+    });
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
